@@ -1,0 +1,24 @@
+#panel-battery article {
+  margin: 0;
+  overflow: hidden;
+  height: 0;
+  transition: 0.6s;
+}
+
+#panel-battery input:checked ~ article { 
+  height: 70px;
+}
+
+#panel-battery button {
+  margin: 15px;
+}
+
+#canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#panel-charge div .is-active {
+  background-color: #d6ffda;
+}

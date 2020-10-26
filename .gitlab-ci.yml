@@ -1,0 +1,13 @@
+image: tiangolo/docker-with-compose
+
+stages:
+    - test
+
+test:
+    stage: test
+    before_script:
+      - echo $(cat /proc/sys/kernel/random/uuid) > PROJECT
+    script:
+      - docker-compose -p $(cat PROJECT) up --build --exit-code-from=tests tests
+    after_script:
+      - docker-compose -p $(cat PROJECT) down
