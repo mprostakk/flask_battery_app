@@ -2,7 +2,7 @@ const headers = {
   'Content-Type': 'application/json'
 }
 
-const prefixUrl = 'http://localhost/api';
+const prefixUrl = 'http://178.128.44.159/api';
 
 const clearBattries = () => {
   const panel = document.getElementById('panel-battery');  
