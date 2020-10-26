@@ -2,6 +2,24 @@
 
 Api documentation is located on ```/api/docs``` when runned.
 
+## Contributors 
+
+<div style="padding: 10px;">
+<a href="https://github.com/mprostakk">
+  <img src="https://github.com/mprostakk.png?size=100" style="border-radius:50%">
+</a>
+
+<a href="https://github.com/NorbertOzga">
+  <img src="https://github.com/NorbertOzga.png?size=100" style="border-radius:50%">
+</a>
+
+<a href="https://github.com/xszym">
+  <img src="https://github.com/xszym.png?size=100" style="border-radius:50%">
+</a>
+</div>
+
+
+
 ## Scripts
 #### Debug
 ```docker-compose up web```
