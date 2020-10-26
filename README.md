@@ -1,6 +1,13 @@
 # Battery Backend
 
-Api documentation is located on ```/api/docs``` when runned.
+## Live demo 
+
+Go visit the live 
+[Dashboard](http://178.128.44.159/static).
+
+Checkout out example API requests in 
+[Swagger](http://178.128.44.159/api/doc).
+
 
 ## Contributors 
 
@@ -19,7 +26,6 @@ Api documentation is located on ```/api/docs``` when runned.
 </div>
 
 
-
 ## Scripts
 #### Debug
 ```docker-compose up web```
@@ -35,6 +41,8 @@ Uses 3 workers on gunicorn and Nginx for reverse proxy, serving static files and
 
 ###### Info
 
+Api documentation is located on ```/api/docs``` when runned.
+
 Website is located in ```/nginx/static```. Can be viewed on ```localhost/static``` when ran.
 
 **Warning** - In ```script.js``` we need to change the ```urlPrefix``` variable for production.
@@ -47,15 +55,3 @@ Run migrations when server is running
 ```docker-compose exec web flask migrate```
 
 ```docker-compose exec web flask upgrade```
-
-## ToDo
-
-Just some tasks that could be implemented in the feature
-
-- Getting voltage for each cell
-- Add tests for routes, not only services
-- Add ```.prod``` environment files to ```.gitignore```
-- Try_to_commit add to ```common_functions.py``` file and refactor services
-- (website) Fix form bug on when modals are active when **enter** key is clicked
-- (website) Refresh Charge info after **End Charge**
-- Refactor validators with Marshmallow schemas
