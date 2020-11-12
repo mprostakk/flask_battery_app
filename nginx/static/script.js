@@ -41,20 +41,20 @@ const getBatteries = () => {
         if(element.last_charge){
           if(element.is_plugged){
             icon.className = "fas fa-bolt";
-            columnInfo.innerHTML = "Plugged"
+            columnInfo.innerText = "Plugged"
           }
           else {
             if(element.last_charge.charge_type == 'charging'){
               icon.className = "fas fa-battery-full";
-              columnInfo.innerHTML = "Charged"
+              columnInfo.innerText = "Charged"
             }
             else if (element.last_charge.charge_type == 'maintenance'){
               icon.className = "fas fa-battery-three-quarters";
-              columnInfo.innerHTML = "Maintenance"
+              columnInfo.innerText = "Maintenance"
             } 
             else if (element.last_charge.charge_type == 'discharging') {
               icon.className = "fas fa-battery-empty";
-              columnInfo.innerHTML = "Discharged"
+              columnInfo.innerText = "Discharged"
             }
           }
           if(element.last_charge.charge_type == 'charging'){
@@ -69,7 +69,7 @@ const getBatteries = () => {
         }
         else{
           icon.className = "fas fa-times";
-          columnInfo.innerHTML = "NoData"
+          columnInfo.innerText = "NoData"
         }
   
         icon.style.minWidth = "20px";
@@ -85,33 +85,33 @@ const getBatteries = () => {
         let columnID = column.cloneNode();
         columnID.className = "column has-text-centered is-1";
         columnID.style.textAlign = 'center';
-        columnID.innerHTML = element.id;
+        columnID.innerText = element.id;
   
         let columnVoltage = column.cloneNode();
         columnVoltage.className = "column";
         if(element.last_charge){
           if(element.last_charge.end_date){
-            columnVoltage.innerHTML = element.last_charge.end_voltage + "v";
+            columnVoltage.innerText = element.last_charge.end_voltage + "v";
           }
           else{
-            columnVoltage.innerHTML = element.last_charge.start_voltage + "v";
+            columnVoltage.innerText = element.last_charge.start_voltage + "v";
           }
         }
         else{
-          columnVoltage.innerHTML = element.full_charge_voltage + "v";
+          columnVoltage.innerText = element.full_charge_voltage + "v";
         }
   
         let columnCapacity = column.cloneNode();
         columnCapacity.className = "column";
-        columnCapacity.innerHTML = element.capacity + "mAh";
+        columnCapacity.innerText = element.capacity + "mAh";
         
         let columnCells = column.cloneNode();
         columnCells.className = "column";
-        columnCells.innerHTML = element.no_of_cells + "cells";
+        columnCells.innerText = element.no_of_cells + "cells";
   
         let columnDischargeRate = column.cloneNode();
         columnDischargeRate.className = "column";
-        columnDischargeRate.innerHTML = element.discharge_rate + "C";
+        columnDischargeRate.innerText = element.discharge_rate + "C";
   
         columnID.style.minWidth = "60px";
         columnIcon.style.minWidth = "60px";
@@ -134,10 +134,10 @@ const getBatteries = () => {
           let c3 = column.cloneNode();
           c3.className = "column";
           if(element.last_charge.end_date){
-            c3.innerHTML = element.last_charge.end_date.toString().substr(0, 10);
+            c3.innerText = element.last_charge.end_date.toString().substr(0, 10);
           }
           else {
-            c3.innerHTML = element.last_charge.start_date.toString().substr(0, 10);
+            c3.innerText = element.last_charge.start_date.toString().substr(0, 10);
           }
           columns.appendChild(c3);
         }
@@ -255,20 +255,20 @@ const getCharges = () => {
   
         let columnId = column.cloneNode();
         columnId.className = "column has-text-centered";
-        columnId.innerHTML = element.id;
+        columnId.innerText = element.id;
   
         let columnChargeType = column.cloneNode();
         columnChargeType.className = "column";
-        columnChargeType.innerHTML = element.charge_type;
+        columnChargeType.innerText = element.charge_type;
   
         let columnBatteryID = column.cloneNode();
         columnBatteryID.className = "column";
-        columnBatteryID.innerHTML = element.battery_id;
+        columnBatteryID.innerText = element.battery_id;
   
         let columnStartDate = column.cloneNode();
         columnStartDate.className = "column";
         columnStartDate.style = "white-space: nowrap;";
-        columnStartDate.innerHTML = formatDate(new Date(element.start_date));
+        columnStartDate.innerText = formatDate(new Date(element.start_date));
   
         columnBatteryID.style.minWidth = "60px";
         columnIcon.style.minWidth = "60px";
@@ -282,7 +282,7 @@ const getCharges = () => {
         
         if(!element.end_date){
           let endButton = document.createElement('button');
-          endButton.innerHTML = "End";
+          endButton.innerText = "End";
           endButton.className = "button is-danger float-right";
           endButton.style.margin = "10px";
           endButton.style.height = "25px";
@@ -292,7 +292,7 @@ const getCharges = () => {
         else {
           let endData = column.cloneNode();
           endData.style = "white-space: nowrap;";
-          endData.innerHTML = formatDate(new Date(element.end_date));
+          endData.innerText = formatDate(new Date(element.end_date));
           columns.appendChild(endData);
         }
         panelCharge.appendChild(a);      
